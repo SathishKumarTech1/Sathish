@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rec_primary_fill"
+        app:cardCornerRadius="@dimen/size_10x"
+        app:cardElevation="@dimen/padding_3x"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/profileIV"
+                android:layout_width="@dimen/size_50x"
+                android:layout_height="@dimen/size_50x"
+                android:padding="@dimen/padding_8x"
+                android:src="@drawable/ic_profile_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:paddingStart="@dimen/padding_8x"
+                android:paddingTop="@dimen/padding_5x"
+                android:paddingEnd="@dimen/padding_8x"
+                android:paddingBottom="@dimen/padding_8x"
+                app:layout_constraintBottom_toTopOf="@+id/emailTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/profileIV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/emailTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:maxLines="1"
+                android:paddingStart="@dimen/padding_8x"
+                android:paddingEnd="@dimen/padding_8x"
+                android:paddingBottom="@dimen/padding_5x"
+                app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+                app:layout_constraintStart_toEndOf="@+id/profileIV"
+                app:layout_constraintTop_toBottomOf="@+id/nameTV" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

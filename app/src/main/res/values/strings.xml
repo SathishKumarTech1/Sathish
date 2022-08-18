@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="no_internet_connection">No network available, please try again.</string>
+
+    <string name="base_url">https://reqres.in/api/</string>
+    <string name="ok">Ok</string>
+    <string name="enter_your_email_login">Enter Your Email</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="enter_your_password_login">Enter Your Password</string>
+    <string name="password_must_be_at_least_eight_characters">Password must be at least 8 characters</string>
+    <string name="password_must_contain_at_least_1_digit">Password must contain at least 1 digit</string>
+    <string name="password_must_contain_at_least_1_lowercase_character">Password must contain at least 1 lowercase character</string>
+    <string name="password_must_contain_at_least_1_uppercase_character">Password must contain at least 1 uppercase character</string>
+    <string name="password_must_contain_at_least_1_special_character">Password must contain at least 1 special character</string>
+    <string name="search_by_keyword">Search by keyword</string>
+</resources>
