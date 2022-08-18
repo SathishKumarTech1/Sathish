@@ -13,6 +13,7 @@ interface RetrofitService {
         @Query("page") page: Int
     ): Response<UserResponse>
 
+
     companion object {
         var retrofitService: RetrofitService? = null
         fun getInstance() : RetrofitService {
