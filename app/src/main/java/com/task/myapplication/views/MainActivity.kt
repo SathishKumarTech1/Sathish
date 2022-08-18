@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.task.myapplication.adapter.MoviePagerAdapter
+import com.task.myapplication.adapter.UserPagerAdapter
 import com.task.myapplication.databinding.ActivityMainBinding
 import com.task.myapplication.managers.retrofit.RetrofitService
 import com.task.myapplication.models.gson.Data
@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var viewModel: MainViewModel
-    private val adapter = MoviePagerAdapter()
+    private val adapter = UserPagerAdapter()
     lateinit var binding: ActivityMainBinding
 
     private lateinit var userData: Data
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch {
-            viewModel.getMovieList().observe(this@MainActivity) {
+            viewModel.getUserList().observe(this@MainActivity) {
                 it?.let {
                     adapter.submitData(lifecycle, it)
                 }

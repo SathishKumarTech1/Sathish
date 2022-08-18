@@ -8,11 +8,11 @@ import androidx.paging.liveData
 import com.task.myapplication.managers.retrofit.RetrofitService
 import com.task.myapplication.models.gson.Data
 import com.task.myapplication.models.gson.NETWORK_PAGE_SIZE
-import com.task.myapplication.paging.MoviePagingSource
+import com.task.myapplication.paging.UserPagingSource
 
 class MainRepository constructor(private val retrofitService: RetrofitService) {
 
-    fun getAllMovies(): LiveData<PagingData<Data>> {
+    fun getUsers(): LiveData<PagingData<Data>> {
 
         return Pager(
             config = PagingConfig(
@@ -21,7 +21,7 @@ class MainRepository constructor(private val retrofitService: RetrofitService) {
                 initialLoadSize = 1
             ),
             pagingSourceFactory = {
-                MoviePagingSource(retrofitService)
+                UserPagingSource(retrofitService)
             }
         , initialKey = 1
         ).liveData

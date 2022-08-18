@@ -6,14 +6,14 @@ import com.task.myapplication.managers.retrofit.RetrofitService
 import com.task.myapplication.models.gson.Data
 import java.lang.Exception
 
-class MoviePagingSource(private val apiService: RetrofitService): PagingSource<Int, Data>() {
+class UserPagingSource(private val apiService: RetrofitService): PagingSource<Int, Data>() {
 
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Data> {
 
         return try {
             val position = params.key ?: 1
-            val response = apiService.getTopRatedMovies(position)
+            val response = apiService.getUsers(position)
             LoadResult.Page(data = response.body()!!.data, prevKey = if (position == 1) null else position - 1,
                 nextKey = position + 1)
         } catch (e: Exception) {

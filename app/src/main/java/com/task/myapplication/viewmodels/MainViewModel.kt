@@ -13,8 +13,8 @@ class MainViewModel constructor(private val mainRepository: MainRepository) : Vi
 
     val errorMessage = MutableLiveData<String>()
 
-    fun getMovieList(): LiveData<PagingData<Data>> {
-        return mainRepository.getAllMovies().cachedIn(viewModelScope)
+    fun getUserList(): LiveData<PagingData<Data>> {
+        return mainRepository.getUsers().cachedIn(viewModelScope)
     }
 
 }

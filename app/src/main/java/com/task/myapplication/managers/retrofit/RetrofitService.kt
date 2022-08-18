@@ -1,6 +1,6 @@
 package com.task.myapplication.managers.retrofit
 
-import com.task.myapplication.models.gson.MovieResponse
+import com.task.myapplication.models.gson.UserResponse
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,9 +10,9 @@ import retrofit2.http.Query
 interface RetrofitService {
 
     @GET("users")
-    suspend fun getTopRatedMovies(
+    suspend fun getUsers(
         @Query("page") page: Int
-    ): Response<MovieResponse>
+    ): Response<UserResponse>
 
     companion object {
         var retrofitService: RetrofitService? = null

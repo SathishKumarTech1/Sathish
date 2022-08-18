@@ -10,9 +10,9 @@ import com.task.myapplication.databinding.AdapterUsersBinding
 import com.task.myapplication.models.gson.Data
 
 
-class MoviePagerAdapter: PagingDataAdapter<Data, MoviePagerAdapter.MovieViewHolder>(MovieComparator) {
+class UserPagerAdapter: PagingDataAdapter<Data, UserPagerAdapter.UserViewHolder>(UserComparator) {
     var onItemClicked: ((Data, Int) -> Unit)? = null
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val data = getItem(position)!!
         holder.view.nameTV.text = data.first_name + " " + data.last_name
         holder.view.emailTV.text = data.email
@@ -30,17 +30,17 @@ class MoviePagerAdapter: PagingDataAdapter<Data, MoviePagerAdapter.MovieViewHold
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = AdapterUsersBinding.inflate(inflater, parent, false)
-        return MovieViewHolder(binding)
+        return UserViewHolder(binding)
     }
 
-    class MovieViewHolder(val view: AdapterUsersBinding): RecyclerView.ViewHolder(view.root) {
+    class UserViewHolder(val view: AdapterUsersBinding): RecyclerView.ViewHolder(view.root) {
 
     }
 
-    object MovieComparator: DiffUtil.ItemCallback<Data>() {
+    object UserComparator: DiffUtil.ItemCallback<Data>() {
         override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
             // Id is unique.
             return oldItem.id == newItem.id
